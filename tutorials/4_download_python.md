@@ -12,7 +12,8 @@ Python 3.8.10
 - Запустим его: `jupyter notebook`
 
 ### Инстукция для MacOS
-Артём, вставь инструкцию для MacOS
+1. Устанавливаем [homebrew](https://brew.sh)
+2. `brew install python`
 
 ### Инструкция для Windows
 - Рекомендуем использовать [Google Colab](https://research.google.com/colaboratory/) для Юпитера.  
