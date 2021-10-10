@@ -71,7 +71,7 @@ debug_control("Hello!", 1000, 7, 993.0, name="Petr", task="Eliminate")
 def product(a, b):
     if a < 0:
         a *= -1
-    else if b < 0:
+    elif b < 0:
         b *= -1
     result = a * b
     print("Product of", a, "and", b, "equals", result)
