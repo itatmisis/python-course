@@ -15,6 +15,9 @@ app = typer.Typer()
 
 @app.command()
 def ls(directory: str):
+    """
+    Документация!!!
+    """
     folder = PARENT / directory
     for file in folder.iterdir():
         print('file' if file.is_file() else 'directory',  file.name, sep=': ')
