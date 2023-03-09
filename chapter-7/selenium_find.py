@@ -1,15 +1,13 @@
 # quickstart для Селениума
 import time
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from selenium.common import exceptions
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 
-def find_wait(
+def find_wait(  # noqa: C901, CCR001
     browser,
     what: str,
     how=By.CSS_SELECTOR,
@@ -30,32 +28,24 @@ def find_wait(
         # Искать только 1
         if no_error:
             try:
-                to_return = WebDriverWait(browser, wait_time).until(
-                    EC.presence_of_element_located((how, what))
-                )
+                to_return = WebDriverWait(browser, wait_time).until(EC.presence_of_element_located((how, what)))
             except exceptions.TimeoutException:
                 return None
             else:
                 return to_return
         else:
-            return WebDriverWait(browser, wait_time).until(
-                EC.presence_of_element_located((how, what))
-            )
+            return WebDriverWait(browser, wait_time).until(EC.presence_of_element_located((how, what)))
     if amount == -1:
         # Искать все
         if no_error:
             try:
-                to_return = WebDriverWait(browser, wait_time).until(
-                    EC.presence_of_all_elements_located((how, what))
-                )
+                to_return = WebDriverWait(browser, wait_time).until(EC.presence_of_all_elements_located((how, what)))
             except exceptions.TimeoutException:
                 return None
             else:
                 return to_return
         else:
-            return WebDriverWait(browser, wait_time).until(
-                EC.presence_of_all_elements_located((how, what))
-            )
+            return WebDriverWait(browser, wait_time).until(EC.presence_of_all_elements_located((how, what)))
     else:  # Не оптимизовано, исправить потом
         # Искать конкретное количество, на выходе может быть найденно больше, будут возвращенны все
         if no_error:
@@ -75,9 +65,7 @@ def find_wait(
                     sleeped += 0.5
                 return array_to_return
         else:
-            array_to_return = WebDriverWait(browser, wait_time).until(
-                EC.presence_of_all_elements_located((how, what))
-            )
+            array_to_return = WebDriverWait(browser, wait_time).until(EC.presence_of_all_elements_located((how, what)))
             sleeped = 0
             while len(array_to_return) < amount and (sleeped > wait_time):
                 array_to_return = WebDriverWait(browser, wait_time).until(
