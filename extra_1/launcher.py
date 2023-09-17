@@ -1,7 +1,7 @@
 import time
 
 
-def launch_rocket(minus_t: int):
+def launch_rocket(minus_t: int) -> None:
     for count in range(minus_t, 0, -1):
         print(f"{count=}")
         time.sleep(1)

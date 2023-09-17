@@ -1,15 +1,64 @@
 [tool.isort]
 profile = "black"
-multi_line_output=3
+multi_line_output = 3
 include_trailing_comma = true
 default_section = "FIRSTPARTY"
-known_third_party = ["dict_merger","orjson","telegram","shapely", "dependency_injector","cache","structlog","tenacity","dependency_injector","phonenumbers",
-    "phone_iso3166","boto3","botocore","aws_xray_sdk","rediscluster","geopy","starlette","aiobotocore","aioboto3",
-    "aws_lambda_powertools","aws-xray-sdk","awsiotsdk","alembic","sqlalchemy","geoalchemy2","aredis","redis",
-    "psycopg2","asyncpg","pynamodb","backoff","requests","aiohttp","uvloop","fastapi","mangum","jwt",
-    "slackclient","celery","uvicorn","cachetools","locust","typer","aiogram","humps","pydantic","pytz",
-    "ujson","returns","loguru","tqdm","pytz", "whoosh", "payment_page_sdk"]
-sections = ["STDLIB","THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]
+known_third_party = [
+    "dict_merger",
+    "orjson",
+    "telegram",
+    "shapely",
+    "dependency_injector",
+    "cache",
+    "structlog",
+    "tenacity",
+    "dependency_injector",
+    "phonenumbers",
+    "phone_iso3166",
+    "boto3",
+    "botocore",
+    "aws_xray_sdk",
+    "rediscluster",
+    "geopy",
+    "starlette",
+    "aiobotocore",
+    "aioboto3",
+    "aws_lambda_powertools",
+    "aws-xray-sdk",
+    "awsiotsdk",
+    "alembic",
+    "sqlalchemy",
+    "geoalchemy2",
+    "aredis",
+    "redis",
+    "psycopg2",
+    "asyncpg",
+    "pynamodb",
+    "backoff",
+    "requests",
+    "aiohttp",
+    "uvloop",
+    "fastapi",
+    "mangum",
+    "jwt",
+    "slackclient",
+    "celery",
+    "uvicorn",
+    "cachetools",
+    "locust",
+    "typer",
+    "aiogram",
+    "humps",
+    "pydantic",
+    "pytz",
+    "ujson",
+    "returns",
+    "loguru",
+    "tqdm",
+    "pytz",
+    "whoosh",
+]
+sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 
 [tool.black]
 line-length = 120
@@ -21,11 +70,22 @@ markers = ["unit"]
 
 [tool.flake8]
 ignore = [
-    "D203", "E203", "W503", "SCS108",
-    "R502", "R501", "R504", "R503", "PIE781",
-    "PIE786", "PIE798", "PIE803", "PIE785",
-    "PIE797", "S105", "ECE001", "T201", "S311"
-    ]
+    "D203",
+    "E203",
+    "W503",
+    "SCS108",
+    "R502",
+    "R501",
+    "R504",
+    "R503",
+    "PIE781",
+    "PIE786",
+    "PIE798",
+    "PIE803",
+    "PIE785",
+    "PIE797",
+    "T201",
+]
 exclude = [
     "**/__pycache__",
     "**/tests/*",
@@ -33,14 +93,25 @@ exclude = [
     "**/python",
     "**/.venv",
     "**/build/",
-    "**/old/*"
+    "**/old/*",
+    "5-MatMod-Tihonov/**",
+    "4-Дискретка-Пышняк/**",
+    "5-NumMet-Рубчинский/**",
+    "4-ML-Павлов/**",
 ]
 max-complexity = 10
 max-line-length = 120
 extend-immutable-calls = [
-    "Depends", "fastapi.Depends", "fastapi.params.Depends",
-    "Header", "Query", "Path", "Option", "typer.Option",
-    "HasAnyAuthority", "HasAnyScope"
+    "Depends",
+    "fastapi.Depends",
+    "fastapi.params.Depends",
+    "Header",
+    "Query",
+    "Path",
+    "Option",
+    "typer.Option",
+    "HasAnyAuthority",
+    "HasAnyScope",
 ]
 
 kwargs-max-positional-arguments = 4

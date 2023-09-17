@@ -8,13 +8,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def find_wait(  # noqa: C901, CCR001
-    browser,
+    browser,  # noqa: ANN001
     what: str,
-    how=By.CSS_SELECTOR,
+    how=By.CSS_SELECTOR,  # noqa: ANN001
     wait_time: int = 4,
     amount: int = 1,
     no_error: bool = True,
-):
+):  # noqa: ANN201
     """
     Получает безопасно елемент страницы
     :return: web-element

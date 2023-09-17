@@ -14,12 +14,12 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler(commands="start")
-async def handle_start(message: types.Message):
+async def handle_start(message: types.Message) -> None:
     await message.answer("Привет, ты в боте!")
 
 
 @dp.message_handler()
-async def handle_message(message: types.Message):
+async def handle_message(message: types.Message) -> None:
     try:
         amount = int(message.text)
     except ValueError:

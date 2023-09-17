@@ -14,7 +14,7 @@ app = typer.Typer()
 
 
 @app.command()
-def ls(directory: str):
+def ls(directory: str) -> None:
     """
     Документация!!!
     """
@@ -24,7 +24,7 @@ def ls(directory: str):
 
 
 @app.command()
-def ping(host: str):
+def ping(host: str) -> None:
     result = os.system(f"ping {host} -c 4")  # noqa: SCS102, S605
     print(result)
 
