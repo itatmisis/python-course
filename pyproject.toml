@@ -118,3 +118,19 @@ kwargs-max-positional-arguments = 4
 kwargs-ignore-function-pattern-extend = '(select)|(where)|(and_)|(or_)|(ST_\w*)'
 
 noqa-require-code = true
+
+[tool.poetry]
+name = "python-course"
+version = "0.1.0"
+description = ""
+authors = ["pibragimov <pibragimov@whoosh.bike>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jupyterlab = "^4.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

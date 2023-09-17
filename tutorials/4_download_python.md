@@ -7,7 +7,7 @@
 ❯ python3 --version
 Python 3.8.10
 ```
-Нам нужна версия питона не ниже `3.7`
+Нам нужна версия питона не ниже `3.10`
 - Установим Юпитер: `pip install jupyter`
 - Запустим его: `jupyter notebook`
 
@@ -16,7 +16,7 @@ Python 3.8.10
 2. `brew install python`
 
 ### Инструкция для Windows
-- Рекомендуем использовать [Google Colab](https://research.google.com/colaboratory/) для Юпитера.
-
-<br><br>
-Артём, вставь инструкцию для Windows
+- Установить линукс или купить macbook
+- Если этот вариант невозможен, то
+    - Рекомендуем использовать [Google Colab](https://research.google.com/colaboratory/) для Юпитера.
+    - Установить [PyCharm](https://www.jetbrains.com/pycharm/download/?section=mac)
