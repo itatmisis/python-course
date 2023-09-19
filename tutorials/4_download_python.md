@@ -20,3 +20,10 @@ Python 3.8.10
 - Если этот вариант невозможен, то
     - Рекомендуем использовать [Google Colab](https://research.google.com/colaboratory/) для Юпитера.
     - Установить [PyCharm](https://www.jetbrains.com/pycharm/download/?section=mac)
+
+
+### Среды разработки
+- [PyCharm](https://www.jetbrains.com/pycharm/download/?section=mac), универсальная и самая простая среда
+- [VSCode](https://code.visualstudio.com/) - минималистичаня среда разработки
+- [Jupyter](https://jupyter.org/) - ячеечная среда разработки
+- [Google Colab](https://research.google.com/colaboratory/) - тоже самое, что jupyter, но онлайн без регистрации, СМС и скачиваний.
