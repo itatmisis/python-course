@@ -1,27 +1,30 @@
 import time
+from typing import Awaitable, Callable
 
 import uvicorn
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 
 import users
 from config import config
 
-app = FastAPI(title="Python Course", description="Base Template for learning FastAPI")
+app = FastAPI(title="Python Course", description="Лучший шаблон, чтобы учить FastAPI")
 app.include_router(users.router)
 
 
-@app.get("/")  # method + path
-async def say_hello():  # async/sync + name in docs
-    return {"message": "Hello World"}  # response
+# response_model - возвращаемая модель данных
+@app.get("/", response_model=dict[str, str])  # endpoint = method + path
+def say_hello() -> dict[str, str]:  # имя функции будет использоваться в документации
+    """
+    Текст в документаци функции будет использоваться в сваггере
+    """
+    return {"message": "Hello World"}  # ответ
 
 
 @app.middleware("http")
-async def add_process_time_header(request: Request, call_next):
+async def add_process_time_header(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
     start_time = time.time()
     response = await call_next(request)
-    # time.sleep(1)
     process_time = time.time() - start_time
-    print(process_time)
     response.headers["X-Process-Time"] = str(process_time)
     return response
 

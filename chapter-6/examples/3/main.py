@@ -3,13 +3,17 @@ from fastapi import FastAPI
 
 import users
 
-app = FastAPI(title="Python Course", description="Base Template for learning FastAPI")
+app = FastAPI(title="Python Course", description="Лучший шаблон, чтобы учить FastAPI")
 app.include_router(users.router)
 
 
-@app.get("/")  # method + path
-async def say_hello():  # async/sync + name in docs
-    return {"message": "Hello World"}  # response
+# response_model - возвращаемая модель данных
+@app.get("/", response_model=dict[str, str])  # endpoint = method + path
+def say_hello() -> dict[str, str]:  # имя функции будет использоваться в документации
+    """
+    Текст в документаци функции будет использоваться в сваггере
+    """
+    return {"message": "Hello World"}  # ответ
 
 
 if __name__ == "__main__":
