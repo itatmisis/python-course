@@ -1,4 +1,4 @@
-## Глава 5 - HTTP, JSON и REST API
+## Глава 6 - FastApi
 ## Структура
 - `lecture.ipynb` - ноутбук лекции
 - `practice.ipynb` - ноутбук практики
