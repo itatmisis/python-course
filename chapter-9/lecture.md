@@ -1,6 +1,6 @@
 ### Линукс
 
-Линукс - семество операционных систем, основанных на ядре линукс.
+Линукс - семество операционных систем, основанных на ядре линукс.  
 Дистрибутив - конкретная операционная система: Debian, Ubuntu, Android.
 ![image](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Linux_Distribution_Timeline_Dec._2020.svg/3020px-Linux_Distribution_Timeline_Dec._2020.svg.png)
 
