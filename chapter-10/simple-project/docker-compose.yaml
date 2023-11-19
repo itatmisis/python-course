@@ -1,0 +1,52 @@
+version: '3.1'
+
+services:
+  backend:
+    restart: always
+    environment:
+      # переменные окружения
+      _UVICORN_HOST: "0.0.0.0"
+      _UVICORN_PORT: 8000
+      _PG_HOST: "postgres"
+    build:
+      # какой image использовать
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      # использовать ли внутренную сеть
+      - backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - "./app/.env:/backend/app/.env"
+    ports:
+      # вывести ли порты в материнскую систему
+      - 8000:8000
+
+  postgres:
+    image: postgres:16.1 # какой image скачать с docket-hub
+    environment:
+      POSTGRES_USER: db_main
+      POSTGRES_PASSWORD: db_main
+      PGUSER: db_main
+      PGPASSWORD: db_main
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - "./extra/init.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "./data/pg/:/var/lib/postgresql/data/"
+    networks:
+      - backend
+    healthcheck:
+      # проверка жизнеспособности сервиса.
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  backend:
+    name: backend
