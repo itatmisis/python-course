@@ -9,7 +9,7 @@ docker-rerun:
 	docker run --name=simple-server-container -p 8000:8000 simple-server-image
 
 run-infra:
-	docker-compose run postgres
+	docker-compose up postgres
 
 install:
 	pip3 install -r requirements.txt

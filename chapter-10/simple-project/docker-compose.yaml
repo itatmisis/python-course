@@ -5,9 +5,10 @@ services:
     restart: always
     environment:
       # переменные окружения
-      _UVICORN_HOST: "0.0.0.0"
-      _UVICORN_PORT: 8000
-      _PG_HOST: "postgres"
+      SERVER_HOST: "0.0.0.0"
+      SERVER_PORT: "8000"
+      DB_HOST: "postgres"
+
     build:
       # какой image использовать
       context: .

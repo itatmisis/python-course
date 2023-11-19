@@ -4,6 +4,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    db_host: str = "localhost"
+
     server_host: str = "0.0.0.0"  # noqa: S104
     server_port: int = 8000
     server_workers: int = mp.cpu_count()
