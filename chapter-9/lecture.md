@@ -67,10 +67,11 @@ SSH - secure shell — «безопасная оболочка», сетевой
 Предположим, у нас есть простой сервер:
 >app.py
 ```python
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, Request
 from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
+
 
 @app.get("/ip", response_class=PlainTextResponse)
 def get_client_ip(request: Request) -> str:
