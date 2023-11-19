@@ -19,8 +19,6 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    volumes:
-      - "./app/.env:/backend/app/.env"
     ports:
       # вывести ли порты в материнскую систему
       - 8000:8000
