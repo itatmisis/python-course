@@ -8,7 +8,7 @@ class Settings(BaseSettings):
 
     server_host: str = "0.0.0.0"  # noqa: S104
     server_port: int = 8000
-    server_workers: int = mp.cpu_count()
+    server_workers: int = mp.cpu_count() * 2
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
