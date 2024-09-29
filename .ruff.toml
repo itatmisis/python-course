@@ -1,0 +1,135 @@
+exclude = [
+    # GRPC data
+    "**_pb2.pyi",
+
+    # git
+    ".git",
+
+    # build test
+    ".nox",
+    ".tox",
+
+    # test
+    ".pytest_cache",
+    ".coverage",
+    "coverage.xml",
+
+    # chache
+    ".mypy_cache",
+    ".ruff_cache",
+
+    # IDE
+    ".vscode",
+    ".idea",
+
+    # python additional
+    "__pypackages__",
+    ".pytype",
+    "*.pyc",
+    "*.pyo",
+
+    # virtual environment
+    ".pyenv",
+    ".direnv",
+    ".venv",
+    "venv",
+
+    # packages, builds
+    "site-packages",
+    "build",
+    "dist",
+]
+
+target-version = "py310"
+
+line-length = 120
+indent-width = 4
+
+[lint]
+select = [
+    # https://docs.astral.sh/ruff/rules/
+
+    "F",      # pyflakes
+    "E",      # errors [pycodestyle]
+    "W",      # warnings [pycodestyle]
+    "C901",   # McCabe complexity
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "ASYNC",  # flake8-async
+    "BLE",    # flake8-blind-except
+    "B",      # flake8-bugbear
+    "A",      # flake8-builtins
+    "COM",    # flake8-commas
+    "C4",     # flake8-comprehensions
+    "T10",    # flake8-debugger
+    "ISC",    # flake8-implicit-str-concat
+    "G010",   # logging-warn [flake8-logging-format]
+    "G201",   # logging-exc-info [flake8-logging-format]
+    "G202",   # logging-redundant-exc-info [flake8-logging-format]
+    "T20",    # flake8-print
+    "RSE",    # flake8-raise
+    "RET504", # unnecessary-assign [flake8-return]
+    "RET505", # superfluous-else-return [flake8-return]
+    "RET506", # superfluous-else-raise [flake8-return]
+    "RET507", # superfluous-else-continue [flake8-return]
+    "RET508", # superfluous-else-break [flake8-return]
+    "SIM",    # flake8-simplify
+    "TCH",    # flake8-type-checking
+    "ARG",    # flake8-unused-arguments
+    "PLC",    # Convention [pylint]
+    "PLE",    # Errors [pylint]
+    "PLR",    # Refactor [pylint]
+    "TRY",    # tryceratops
+    "RUF019", # unnecessary-key-check [ruff-specific-rules-ruf]
+    "RUF013", # redundant-keyword-arg [ruff-specific-rules-ruf]
+    "INT",    # flake8-gettext
+    "RET",    # flake8-return
+    "S",      # flake8-bandit
+    "LOG",    # flake8-logging-format
+]
+
+ignore = [
+    "T201",    # no print
+    "B028",    # no-explicit-stacklevel [flake8-bugbear]
+    "B034",    # re-sub-positional-args [flake8-bugbear]
+    "COM812",  # missing-trailing-comma [flake8-commas]
+    "ISC001",  # single-line-implicit-string-concatenation [flake8-implicit-str-concat]
+    "SIM117",  # multiple-with-statements [flake8-simplify]
+    "TCH002",  # typing-only-third-party-import [flake8-type-checking]
+    "PLC0415", # import-outside-top-level [Convention [pylint]]
+    "PLR2004", # magic-value-comparison [Refactor [pylint]]
+    "E402",    # module-import-not-at-top-of-file [Errors [pycodestyle]]
+    "E731",    # lambda-assignment [Errors [pycodestyle]]
+    "TRY003",  # raise-vanilla-args [tryceratops]
+    "TRY400",  # error-instead-of-exception [tryceratops]
+    "N815",    # mixed-case-variable-in-class-scope [pep8-naming]
+    "N806",    # non-lowercase-variable-in-function [pep8-naming]
+    "BLE001",  # do-no-catch-blind-exception
+    "ANN101",
+    "ANN204",
+    "ANN102",  # Missing type annotation for `cls` in classmethod
+    "S104",    # Possible binding to all interfaces
+    "S311",    # Standard pseudo-random generators are not suitable for cryptographic purposes
+]
+
+
+[lint.flake8-bugbear]
+extend-immutable-calls = [
+    "Depends",
+    "fastapi.Depends",
+    "fastapi.params.Depends",
+]
+
+
+[lint.mccabe]
+max-complexity = 7
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[lint.pylint]
+max-args = 13
+
+[format]
+quote-style = "double"
+indent-style = "space"

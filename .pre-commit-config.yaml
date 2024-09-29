@@ -1,71 +1,26 @@
-default_language_version:
-    python: python3.10
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.6.0
     hooks:
+      - id: check-yaml
+      - id: check-json
+
       - id: end-of-file-fixer
       - id: trailing-whitespace
-      - id: check-added-large-files
-        args: ['--maxkb=3000']
-      - id: check-merge-conflict
-      - id: check-ast # checks python syntax tree for errors
-      - id: debug-statements
-      - id: check-yaml # checks .yaml for errors
-        args: ['--unsafe'] # Instead of loading the files, simply parse them for syntax.
-        exclude: 'staged_variables.yaml'
-      - id: check-toml # checks .toml for errors
-      - id: check-json # checks .json for errors
-      - id: check-xml # checks .xml for errors
-      - id: detect-aws-credentials # detects aws cred
-      - id: detect-private-key # detects private keys
-      - id: requirements-txt-fixer # fixes requirements txt and sorts it
-      # - id: name-tests-test
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+
+      - id: requirements-txt-fixer
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.5
     hooks:
-      - id: isort  # sorts improts
-  - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 23.9.1
-    hooks:
-      - id: black  # autoformat python code
-  - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 23.9.1
-    hooks:
-      - id: black-jupyter  # autoformat python code
-  - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
-    hooks:
-      - id: flake8
-        additional_dependencies: [
-                'Flake8-pyproject==1.2.2', # flake8 settings in pyproject
-                'flake8-annotations-complexity==0.0.7', # checks for annotation complexity
-                'flake8-annotations==3.0.1',
-                'flake8-cognitive-complexity==0.1.0', # check for functions complexity
-                'flake8-expression-complexity==0.0.11', # check for expression complexity
-                'flake8-bugbear==23.1.20', # find posible bugs, i.e. default mutable args
-                'flake8-print==5.0.0', # forbit prints
-                'flake8-secure-coding-standard==1.3.0', # check for posible security vulnerability
-                'flake8-simplify==0.19.3', # make code simplier
-                'flake8-warnings==0.4.0', # warns you about using deprecated modules, classes, and functions.
-                'flake8-bandit==4.1.1', # Automated security testing built right into your workflow!
-                'flake8-force-keyword-arguments==1.0.4', # force at most 3 positional args
-                'flake8-builtins==2.1.0', # check if builtins used as varss
-                'flake8-comprehensions==3.10.1', # better list/dict/gen comprehensions
-                'flake8-noqa==1.3.0', # better noqa annotations, forces strict noqa annotations
-                # 'flake8-fastapi==0.7.0', # FastAPI fixes
-                'flake8-pie==0.16.0', # better code style
-                'flake8-return==1.2.0', # better returns and raises
-            ]
-  - repo: https://github.com/pycqa/autoflake
-    rev: v2.2.1
-    hooks:
-        - id: autoflake  # automaticly fixes some flake8 problems
-          args:
-              [
-                  "--in-place",
-                  "--expand-star-imports",
-                  "--remove-all-unused-imports",
-                  "--remove-unused-variables",
-                  "--ignore-init-module-imports",
-              ]
+      - id: ruff
+        entry: ruff check
+        args:
+          - --select
+          - I
+          - --fix
+      - id: ruff
+        entry: ruff check
+        args:
+          - --fix
+      - id: ruff-format
