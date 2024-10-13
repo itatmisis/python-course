@@ -1,4 +1,4 @@
-## Глава 4 - REST API, Pydantic, FastAPI
+## Глава 4 - Web: REST API, Pydantic, FastAPI
 
 Запись лекции от 9 октября, 2024 года: https://t.me/itam_python_course/190
 
