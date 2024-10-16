@@ -17,6 +17,6 @@ VALUES ('Паттерны разработки на Python', 'Персиваль
 */
 
 SELECT title, author, price
-FROM book
-WHERE amount >= 2
+    FROM book
+    WHERE amount >= 2
 ORDER BY price
