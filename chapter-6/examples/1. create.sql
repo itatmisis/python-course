@@ -9,7 +9,7 @@ CREATE OR REPLACE TABLE tableName (
 */
 
 CREATE OR REPLACE TABLE book(
-    book_id INTEGER,  --PRIMARY KEY AUTOINCREMENT
+    id      INTEGER,  --PRIMARY KEY AUTOINCREMENT
     title	TEXT,
     author	TEXT,
     price	INT,
