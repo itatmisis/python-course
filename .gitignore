@@ -17,6 +17,7 @@ chapter-10/simple-project/data
 **/.terraform.lock.hcl
 ### TERRAGRUNT FILES ###
 **/.terragrunt-cache*
+chapter-9/project/data/*
 
 # Poetry
 poetry.lock
