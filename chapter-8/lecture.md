@@ -170,22 +170,3 @@ install:
 run:
 	cd app && python entrypoint.py
 ```
-
-### Докер
-![image](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg?uselang=ru)
-Система для автоматизации развёртывания и управления контейнерами.
-Позволяет «упаковать» приложение со всем его окружением и зависимостями в контейнер.
-### Прелести докера
-#### Декларативность описания
-Используя Dockerfile и docker-compose можно однозначно описать как запускать проект
-
-#### Универсальность
-Если у вас установлен докер, вы можете запустить хоть что на хоть чем.
-
-#### Изолированность
-Контейнеры по умолчанию не могут влиять на вашу "материнскую" систему и взаимодействовать с друг-дружкой.
-
-### Ссылки
-- [Инструкция работы с докер от создателя Fastapi](https://fastapi.tiangolo.com/ru/deployment/docker/)
-- [Установка докер](https://docs.docker.com/engine/install/)
-- [Пример проекта с докером](https://github.com/TeaDove/evraz-hack-misis-anime/tree/master/backend)

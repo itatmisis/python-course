@@ -13,12 +13,6 @@ services:
       # какой image использовать
       context: .
       dockerfile: Dockerfile
-    networks:
-      # использовать ли внутренную сеть
-      - backend
-    depends_on:
-      postgres:
-        condition: service_healthy
     ports:
       # вывести ли порты в материнскую систему
       - 8000:8000
@@ -37,15 +31,3 @@ services:
     volumes:
       - "./extra/init.sql:/docker-entrypoint-initdb.d/init.sql"
       - "./data/pg/:/var/lib/postgresql/data/"
-    networks:
-      - backend
-    healthcheck:
-      # проверка жизнеспособности сервиса.
-      test: [ "CMD-SHELL", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-networks:
-  backend:
-    name: backend
