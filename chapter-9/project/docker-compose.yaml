@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  backend:
+    restart: always
+    environment:
+      # переменные окружения
+      APP_UVICORN: '{"host": "0.0.0.0", "port": 8000}'
+      APP_PG: '{"host": "postgres"}'
+
+    build:
+      # какой image использовать
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # вывести ли порты в материнскую систему
+      - 8000:8000
+
+  postgres:
+    image: postgres:17.0 # какой image скачать с docket-hub
+    environment:
+      POSTGRES_USER: db_main
+      POSTGRES_PASSWORD: db_main
+      PGUSER: db_main
+      PGPASSWORD: db_main
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./init.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "./data/pg/:/var/lib/postgresql/data/"
