@@ -22,7 +22,7 @@ class _Settings(BaseSettings):
     pg: Postgres = Postgres()
     uvicorn: Uvicorn = Uvicorn()
 
-    model_config = SettingsConfigDict(env_file=".env", env_prefix="app_")
+    model_config = SettingsConfigDict(env_file=".env", env_prefix="app_", env_nested_delimiter="__")
 
 
 settings = _Settings()
