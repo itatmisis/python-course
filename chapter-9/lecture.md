@@ -1,5 +1,5 @@
 ### Докер
-![image](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg?uselang=ru)
+![image](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg?uselang=ru)<br>
 Система для автоматизации развёртывания и управления контейнерами.
 Позволяет «упаковать» приложение со всем его окружением и зависимостями в контейнер.
 
