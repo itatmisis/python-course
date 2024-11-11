@@ -39,7 +39,6 @@
 ![onion](onion.png)
 
 ## Монолит vs Микросервисы
-
 ![arch](arch.drawio.svg)
 
 ### Монолит
