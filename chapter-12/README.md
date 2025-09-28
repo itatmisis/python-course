@@ -1,4 +1,5 @@
-## Глава 11 - Backend: Nginx, Cors и какой язык все-таки лучше?
+## Глава 11 - Backend 2
+Nginx, Cors и какой язык все-таки лучше?
 
 Запись лекции от 13 ноября, 2024 года: https://t.me/itam_python_course/233<br>
 

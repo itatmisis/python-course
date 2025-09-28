@@ -1,4 +1,5 @@
-## Глава 9 - Deploy: Докеры и компоузы
+## Глава 9 - Deploy 2
+Докеры и компоузы
 
 Запись лекции от 30 октября, 2024 года: https://t.me/itam_python_course/217 <br>
 Лекция: https://github.com/itatmisis/python-course/blob/master/chapter-9/lecture.md
