@@ -1,3 +1,30 @@
 ## Глава 3 - Python: Исключения, контекстные менеджеры, управление зависимостями. HTTP: Теория HTTP и JSON.
 
 Запись лекции от 7 октября, 2024 года: https://t.me/itam_python_course/185
+
+## Домашка
+Написать декодер HTTP запросов
+Создать класс `Request` вида:
+```python
+@dataclass
+class Request:
+    method: str
+    path: str
+    proto: str
+    headers: dict[str, str]
+    bode: str 
+
+    def from_str(cls, v: str) -> "Request":
+        ...
+```
+Функция `from_str` принимает на вход сам HTTP запрос в виде строки и должна создавать обьект класса Request. Например: 
+```python
+>>> v = """POST /users HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 49
+
+name=FirstName+LastName&email=bsmth%40example.com"""
+>>> Request.from_str(v) 
+>>> Request(method='POST', path='/users', proto="HTTP/1.1", headers={'Host': 'example.com', ...}, ...)
+```
