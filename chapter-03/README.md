@@ -1,10 +1,10 @@
-## Глава 3 - Python 3
-Исключения, контекстные менеджеры, управление зависимостями. HTTP: Теория HTTP и JSON.
+## Глава 3 - WEB 1: HTTP, JSON и REST
 
 Запись лекции от 7 октября, 2024 года: https://t.me/itam_python_course/185
 
 ## Домашка
-Написать декодер HTTP запросов
+Написать декодер HTTP запросов 
+
 Создать класс `Request` вида:
 ```python
 @dataclass
@@ -17,8 +17,12 @@ class Request:
 
     def from_str(cls, v: str) -> "Request":
         ...
+
+    def to_str(self) -> str:
+        ...
 ```
 Функция `from_str` принимает на вход сам HTTP запрос в виде строки и должна создавать обьект класса Request. Например: 
+
 ```python
 >>> v = """POST /users HTTP/1.1
 Host: example.com
@@ -29,3 +33,4 @@ name=FirstName+LastName&email=bsmth%40example.com"""
 >>> Request.from_str(v) 
 >>> Request(method='POST', path='/users', proto="HTTP/1.1", headers={'Host': 'example.com', ...}, ...)
 ```
+Функция `to_str` возвращает HTTP запрос в виде строки
