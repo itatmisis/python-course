@@ -1,6 +1,5 @@
-## Глава 3 - WEB 1: HTTP, JSON и REST
-
-Запись лекции от 7 октября, 2024 года: https://t.me/itam_python_course/185
+## Урок 3 - WEB 1 — HTTP, JSON и REST
+HTTP, JSON и REST
 
 ## Домашка
 Написать декодер HTTP запросов 
@@ -21,7 +20,7 @@ class Request:
     def to_str(self) -> str:
         ...
 ```
-Функция `from_str` принимает на вход сам HTTP запрос в виде строки и должна создавать обьект класса Request. Например: 
+Функция `from_str` принимает на вход сам HTTP запрос в виде строки и должна создавать объект класса `Request`. Например: 
 
 ```python
 >>> v = """POST /users HTTP/1.1
