@@ -41,7 +41,7 @@ class Request:
     path: str
     proto: str
     headers: dict[str, str]
-    bode: str 
+    body: str 
 
     def from_str(cls, v: str) -> "Request":
         ...
