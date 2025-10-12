@@ -1,35 +1,47 @@
 ## Урок 3 - WEB 1 — HTTP, JSON и REST
 HTTP, JSON и REST
 
-## Домашка
-Написать декодер HTTP запросов 
+## ДЗ 3 — Локация адресса
+Есть множество сервисов, позволяющих получить местоположение айпиадреса, например ip-api.com. В этот сервис можно обращаться по API, например:
+```shell
+  ~ ➜ curlie http://ip-api.com/json/misis.ru # вместо misis.ru можно указать IP адресс или любой домен
+HTTP/1.1 200 OK
+Date: Sun, 12 Oct 2025 11:34:44 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 270
+Access-Control-Allow-Origin: *
+X-Ttl: 38
+X-Rl: 43
 
-Создать класс `Request` вида:
-```python
-@dataclass
-class Request:
-    method: str
-    path: str
-    proto: str
-    headers: dict[str, str]
-    bode: str 
-
-    def from_str(cls, v: str) -> "Request":
-        ...
-
-    def to_str(self) -> str:
-        ...
+{
+    "status": "success",
+    "country": "Russia",
+    "countryCode": "RU",
+    "region": "MOW",
+    "regionName": "Moscow",
+    "city": "Moscow",
+    "zip": "144700",
+    "lat": 55.7558,
+    "lon": 37.6173,
+    "timezone": "Europe/Moscow",
+    "isp": "AdminVPS OOO",
+    "org": "Adminvps",
+    "as": "AS211642 AdminVPS OOO",
+    "query": "5.253.61.53"
+}
 ```
-Функция `from_str` принимает на вход сам HTTP запрос в виде строки и должна создавать объект класса `Request`. Например: 
-
-```python
->>> v = """POST /users HTTP/1.1
-Host: example.com
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 49
-
-name=FirstName+LastName&email=bsmth%40example.com"""
->>> Request.from_str(v) 
->>> Request(method='POST', path='/users', proto="HTTP/1.1", headers={'Host': 'example.com', ...}, ...)
+Ваша задача написать скрипт, который принимает на вход айпи адресс или домен, ищет его местоположение через ip-api и выводит его местоположение в цветах, например:
+```shell
+> python3 main.py misis.ru
+Address: <green>Russia</> Moscow Moscow
+Coordinates: <yellow>55.755800,37.617300</> (https://yandex.ru/maps/?ll=37.617300%2C55.755800&z=16)
+Organization: AdminVPS OOO, <cyan>Adminvps</>, AS211642 AdminVPS OOO
 ```
-Функция `to_str` возвращает HTTP запрос в виде строки
+![alt text](image.png)
+
+> Чтобы получить подданый аргумент, в данном случае `misis.ru` используйте, например, `import sys; sys.argv`
+
+> Чтобы отправить запрос используйте библиотеку `requests`, чтобы распарсить ответ - `json` 
+
+> Чтобы покрасить текст вывода используйте ANSI [цвета](https://gist.github.com/rene-d/9e584a7dd2935d0f461904b9f2950007), либо готовую библотеку, [например](https://pypi.org/project/ansi/).
+
