@@ -59,6 +59,6 @@ Content-Length: 49
 
 name=FirstName+LastName&email=bsmth%40example.com"""
 >>> Request.from_str(v) 
->>> Request(method='POST', path='/users', proto="HTTP/1.1", headers={'Host': 'example.com', ...}, ...)
+Request(method='POST', path='/users', proto="HTTP/1.1", headers={'Host': 'example.com', ...}, ...)
 ```
 Функция `to_str` возвращает HTTP запрос в виде строки
