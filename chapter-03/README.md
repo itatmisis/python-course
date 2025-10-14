@@ -1,5 +1,5 @@
-## Урок 3 - WEB 1 — HTTP, JSON и REST
-HTTP, JSON и REST
+## Урок 3 - WEB 1 — HTTP, REST API и FastAPI
+HTTP, JSON и REST (Representational State Transfer) API, валидатор Pydantic и веб-фреймворк FastAPI.
 
 ## ДЗ 3 — Локация адресса
 Начиная с этого ДЗ и далее, если вы используете сторонние библиотеки `requests`, `fastapi` и тд), вначале ДЗ их, чтобы проверяющий мог их установить, например:
