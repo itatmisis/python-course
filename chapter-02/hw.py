@@ -1,5 +1,5 @@
-import time
 import random
+import time
 
 
 def timeit(name: str, iters: int) -> None:

@@ -4,7 +4,7 @@ HTTP, JSON и REST (Representational State Transfer) API, валидатор Pyd
 ## ДЗ 3 — Локация адресса
 Начиная с этого ДЗ и далее, если вы используете сторонние библиотеки `requests`, `fastapi` и тд), вначале ДЗ их, чтобы проверяющий мог их установить, например:
 ```shell
-pip install requests==2.32.5 
+pip install requests==2.32.5
 ```
 Быстро получить список зависимостей можно так: `pip freeze | grep -e requests -e fastapi`
 
@@ -47,7 +47,6 @@ Organization: AdminVPS OOO, <cyan>Adminvps</>, AS211642 AdminVPS OOO
 
 > Чтобы считать аргумент из консоли (misis.ru) используйте, например, `import sys; sys.argv[1] # "misis.ru"`
 
-> Чтобы отправить запрос используйте библиотеку `requests`, чтобы распарсить ответ - `json` 
+> Чтобы отправить запрос используйте библиотеку `requests`, чтобы распарсить ответ - `json`
 
 > Чтобы покрасить текст вывода используйте ANSI [цвета](https://gist.github.com/rene-d/9e584a7dd2935d0f461904b9f2950007), либо готовую библотеку, [например](https://pypi.org/project/ansi/).
-
