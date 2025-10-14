@@ -1,5 +1,6 @@
-## Глава 10
-Ассинхронность, параллелизм, корутины, треды и процессы
+## Глава 11 - Backend 2
+Nginx, Cors и какой язык все-таки лучше?
 
-Запись лекции от 30 октября, 2024 года: https://t.me/itam_python_course/222 <>
-Лекция: https://github.com/itatmisis/python-course/blob/master/chapter-10/lecture.md
+Запись лекции от 13 ноября, 2024 года: https://t.me/itam_python_course/233<br>
+
+Лекция: https://github.com/itatmisis/python-course/blob/master/chapter-12/lecture.md

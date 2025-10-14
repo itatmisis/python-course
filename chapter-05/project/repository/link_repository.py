@@ -1,11 +1,12 @@
-from infrastructure.db.connection import pg_connection
+from infrastructure.db.connection import create_all_tables, sqlite_connection
 from persistent.db.link import Link
 from sqlalchemy import insert, select
 
 
 class LinkRepository:
     def __init__(self) -> None:
-        self._sessionmaker = pg_connection()
+        self._sessionmaker = sqlite_connection()
+        create_all_tables()
 
     async def put_link(self, short_link: str, long_link: str) -> None:
         stmp = insert(Link).values({"short_link": short_link, "long_link": long_link})
