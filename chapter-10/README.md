@@ -1,6 +1,6 @@
-## Глава 11 - Backend 2
-Nginx, Cors и какой язык все-таки лучше?
+## Глава 11 - Backend 1
+Стили, линтеры, расширяемость и паттерны
 
-Запись лекции от 13 ноября, 2024 года: https://t.me/itam_python_course/233<br>
+Запись лекции от 11 ноября, 2024 года: https://t.me/itam_python_course/226<br>
 
-Лекция: https://github.com/itatmisis/python-course/blob/master/chapter-12/lecture.md
+Лекция: https://github.com/itatmisis/python-course/blob/master/chapter-11/lecture.md
