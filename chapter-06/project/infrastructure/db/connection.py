@@ -1,8 +1,8 @@
-from persistent.db.base import Base
+from persistent.db.link import Base
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-_url = "/sql_app.db"
+_url = "/db.sqlite"
 
 
 def sqlite_connection() -> async_sessionmaker[AsyncSession]:
