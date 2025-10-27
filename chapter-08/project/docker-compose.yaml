@@ -24,6 +24,6 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
-    volumes:
+    volumes: # Подключаем _папки_ из материнской системы в дочерную
       - "./init.sql:/docker-entrypoint-initdb.d/init.sql"
       - "./data/pg/:/var/lib/postgresql/data/"

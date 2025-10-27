@@ -1,5 +1,5 @@
-# Базовый образ. По умолчанию берется из https://hub.docker.com/_/python
-FROM python:3.12-slim
+# Базовый образ. По умолчанию берется из https://hub.docker.com/
+FROM python:3.13-trixie
 
 # Выполнить команду в контейрене.
 RUN apt-get update && apt-get install -y gcc python3-dev
@@ -10,8 +10,10 @@ WORKDIR /app
 # Скопировать из материнской машины в контейнер
 COPY ./requirements.txt /app/requirements.txt
 
+# Установить зависимости
 RUN pip install -r /app/requirements.txt
 
+# Скопировать остальной исходный код
 COPY . /app
 
 # Запустить команду

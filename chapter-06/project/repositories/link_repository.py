@@ -1,5 +1,5 @@
-from infrastructure.db.connection import create_all_tables, sqlite_connection
-from persistent.db.link import Link
+from infrastructure.db_connection import create_all_tables, sqlite_connection
+from persistent.link import Link
 from sqlalchemy import insert, select
 
 
