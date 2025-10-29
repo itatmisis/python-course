@@ -3,8 +3,7 @@ services:
     restart: always
     environment:
       # переменные окружения
-      APP_UVICORN: '{"host": "0.0.0.0", "port": 8000}'
-      APP_PG: '{"host": "postgres"}'
+      APP_PG__HOST: 'postgres'
 
     build:
       # какой image использовать
@@ -13,6 +12,8 @@ services:
     ports:
       # вывести ли порты в материнскую систему
       - 8000:8000
+    depends_on:
+      - postgres
 
   postgres:
     image: postgres:17.0 # какой image скачать с docket-hub
@@ -22,8 +23,7 @@ services:
       PGUSER: db_main
       PGPASSWORD: db_main
       PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - "5432:5432"
+    # ports:
+    #   - "5432:5432"
     volumes: # Подключаем _папки_ из материнской системы в дочерную
-      - "./init.sql:/docker-entrypoint-initdb.d/init.sql"
-      - "./data/pg/:/var/lib/postgresql/data/"
+      - ".data/pg/:/var/lib/postgresql/data/"

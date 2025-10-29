@@ -17,4 +17,4 @@ RUN pip install -r /app/requirements.txt
 COPY . /app
 
 # Запустить команду
-CMD ["python", "web_app.py"]
+CMD ["python", "main.py"]

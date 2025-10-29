@@ -1,6 +1,8 @@
 import random
 import string
 
+_letters = string.ascii_letters + string.digits
+
 
 def random_alfanum(n: int) -> str:
-    return "".join(random.choice(string.ascii_lowercase + string.digits) for _ in range(n))
+    return "".join(random.choices(_letters, k=n))
