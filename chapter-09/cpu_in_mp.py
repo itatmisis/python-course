@@ -11,7 +11,7 @@ def pow_ten(v: int) -> float:
     return vsum
 
 
-amount = 50
+amount = 100
 print_step = 5
 
 

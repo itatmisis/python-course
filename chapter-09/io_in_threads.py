@@ -3,7 +3,6 @@ import time
 from concurrent.futures import Future, ThreadPoolExecutor
 from pathlib import Path
 
-
 def pow_ten(v: int) -> None:
     for i in range(10):
         path = Path(f"/tmp/{v}_{i}.txt")  # noqa: S108
